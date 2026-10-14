@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaziKivu — Offres d'emploi ONG &amp; humanitaire, Est de la RDC</title>
+<meta name="description" content="Toutes les offres d'emploi des ONG et organisations humanitaires de l'Est de la RDC : Goma, Bukavu, Bunia, Kalemie. Publiez ou postulez gratuitement.">
+<meta property="og:title" content="KaziKivu — Emplois ONG &amp; humanitaire, Est de la RDC">
+<meta property="og:description" content="Offres vérifiées à Goma, Bukavu, Bunia, Kalemie. Publication gratuite.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#101820;--paper:#F6F7F9;--card:#fff;--line:#DCE1E8;--muted:#5A6676;--brand:#0A5CC2;--brand-d:#083B7D;--sun:#F7C600;--alert:#C8102E;--ok:#117A4D}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Public Sans',sans-serif;color:var(--ink);background:var(--paper);line-height:1.5}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.mono{font-family:'IBM Plex Mono',monospace}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* header */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:22px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque';font-weight:800;font-size:1.25rem;margin-right:auto}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--brand);display:grid;place-items:center;position:relative}
+.logo i::after{content:"";position:absolute;top:6px;right:6px;width:7px;height:7px;border-radius:50%;background:var(--sun)}
+.logo svg{width:18px;height:18px}
+.logo b{color:var(--brand)}
+.nav{display:flex;gap:22px;font-size:.92rem;font-weight:600}
+.nav a:hover{color:var(--brand)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:10px;border:0;font:700 .9rem 'Public Sans';cursor:pointer;background:var(--brand);color:#fff;transition:background .15s}
+.btn:hover{background:var(--brand-d)}
+.btn.alt{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn.sun{background:var(--sun);color:var(--ink)}
+@media(max-width:700px){.nav{display:none}}
+/* hero */
+.hero{background:var(--ink);color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto -80px -120px auto;width:380px;height:380px;border-radius:50%;border:2px solid rgba(247,198,0,.35);box-shadow:0 0 0 38px rgba(10,92,194,.18),0 0 0 80px rgba(10,92,194,.1)}
+.hero .tag{font:500 .76rem 'IBM Plex Mono';letter-spacing:.14em;text-transform:uppercase;color:var(--sun);margin-bottom:16px}
+.hero h1{font-size:clamp(2rem,5.4vw,3.6rem);font-weight:800;max-width:15ch;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--sun)}
+.hero p{color:rgba(255,255,255,.75);max-width:52ch;margin-bottom:26px}
+.search{display:flex;gap:8px;max-width:640px;background:#fff;padding:7px;border-radius:14px;position:relative}
+.search input{flex:1;border:0;padding:12px 14px;font:500 1rem 'Public Sans';color:var(--ink);background:none;min-width:0}
+.search input:focus{outline:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;position:relative}
+.chip{font:600 .8rem 'Public Sans';padding:7px 14px;border-radius:99px;border:1.5px solid rgba(255,255,255,.28);background:none;color:#fff;cursor:pointer}
+.chip.on,.chip:hover{background:var(--sun);color:var(--ink);border-color:var(--sun)}
+/* filters + list */
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:28px 0 14px}
+.bar select{padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font:500 .88rem 'Public Sans';color:var(--ink)}
+.bar label{font-size:.85rem;color:var(--muted);display:flex;gap:6px;align-items:center}
+.count{margin-left:auto;font:500 .8rem 'IBM Plex Mono';color:var(--muted)}
+.demo{background:#FFF6D6;border:1px dashed #C9A400;padding:12px 16px;border-radius:10px;font-size:.88rem;margin-bottom:14px}
+.list{display:grid;gap:12px}
+.job{display:grid;grid-template-columns:54px 1fr auto;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.job:hover{transform:translateY(-2px);box-shadow:0 14px 26px -18px rgba(16,24,32,.5);border-color:var(--brand)}
+.mono-tile{width:54px;height:54px;border-radius:12px;display:grid;place-items:center;color:#fff;font:800 1.15rem 'Bricolage Grotesque'}
+.job h3{font-size:1.1rem;font-weight:800;margin-bottom:3px}
+.org{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:500 .74rem 'IBM Plex Mono';background:#EAF1FB;color:var(--brand-d);padding:4px 9px;border-radius:6px}
+.pill.g{background:#EEF1F4;color:var(--muted)}
+.dl{text-align:right;min-width:104px}
+.dl b{display:block;font:600 .84rem 'Public Sans'}
+.dl small{font-size:.72rem;color:var(--muted)}
+.bar2{height:5px;background:#E6EAF0;border-radius:9px;margin-top:7px;overflow:hidden}
+.bar2 span{display:block;height:100%;background:var(--ok);border-radius:9px}
+.dl.soon b{color:var(--alert)}.dl.soon .bar2 span{background:var(--alert)}
+.dl.off b{color:var(--muted)}.dl.off .bar2 span{background:#B8C0CC}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+@media(max-width:640px){.job{grid-template-columns:46px 1fr}.mono-tile{width:46px;height:46px}.dl{grid-column:1/-1;text-align:left;display:flex;gap:10px;align-items:center}.dl .bar2{flex:1;margin:0}}
+/* detail */
+#detail{position:fixed;inset:0;z-index:100;background:rgba(16,24,32,.6);display:none;overflow:auto;padding:20px}
+#detail.open{display:block}
+.sheet{max-width:760px;margin:20px auto;background:#fff;border-radius:18px;padding:30px;position:relative}
+.sheet h2{font-size:1.8rem;font-weight:800;margin:12px 0 4px}
+.x{position:absolute;top:14px;right:16px;border:0;background:#EEF1F4;width:34px;height:34px;border-radius:50%;font-size:1rem;cursor:pointer}
+.desc{white-space:pre-wrap;margin:18px 0;color:#2A3441}
+.scam{background:#FDECEE;border-left:4px solid var(--alert);padding:12px 14px;border-radius:8px;font-size:.85rem;margin:16px 0}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+/* sections */
+.sec{padding:64px 0}
+.sec h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;margin-bottom:12px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:24px 0}
+.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+.step b{font:800 1.6rem 'Bricolage Grotesque';color:var(--brand)}
+.step p{color:var(--muted);font-size:.92rem;margin-top:6px}
+.cv{background:var(--brand);color:#fff;border-radius:20px;padding:34px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.cv p{color:rgba(255,255,255,.85);max-width:52ch}
+/* footer */
+footer{background:var(--ink);color:rgba(255,255,255,.75);padding:44px 0 28px;margin-top:40px}
+.sign{display:flex;flex-wrap:wrap;gap:16px;align-items:center;border-top:1px solid rgba(255,255,255,.14);padding-top:24px;margin-top:24px}
+.sign img,.sign .ph{width:62px;height:62px;border-radius:50%;object-fit:cover;border:3px solid var(--sun);background:var(--brand);display:grid;place-items:center;color:#fff;font:800 1.1rem 'Bricolage Grotesque'}
+.sign a{color:var(--sun);font-weight:600;border-bottom:1px solid rgba(247,198,0,.4)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M7 4v16M18 4l-8 8 8 8"/></svg></i>Kazi<b>Kivu</b></a>
+  <nav class="nav"><a href="#offres">Offres</a><a href="#publier">Publier</a><a href="#cv">CV</a></nav>
+  <a class="btn sun" href="#publier">Publier une offre</a>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+  <p class="tag">Emplois ONG &amp; humanitaire · Est de la RDC</p>
+  <h1>Les offres de l'Est, <em>au même endroit.</em></h1>
+  <p>Goma, Bukavu, Bunia, Kalemie… Trouvez votre prochain poste ou publiez gratuitement vos recrutements. Chaque annonce est vérifiée avant publication.</p>
+  <div class="search"><input id="q" type="search" placeholder="Poste, ONG, ville… ex : logisticien, MSF, Goma" aria-label="Rechercher une offre"><button class="btn" onclick="go()">Rechercher</button></div>
+  <div class="chips" id="chips"></div>
+</div></section>
+
+<main class="wrap" id="offres">
+  <div class="bar">
+    <select id="fs" aria-label="Secteur"></select>
+    <select id="fc" aria-label="Contrat"></select>
+    <select id="so" aria-label="Tri"><option value="new">Plus récentes</option><option value="dl">Date limite proche</option></select>
+    <label><input type="checkbox" id="ex"> Afficher les expirées</label>
+    <span class="count" id="count"></span>
+  </div>
+  <div id="demo"></div>
+  <div class="list" id="list"></div>
+  <p style="text-align:center;margin:22px"><button class="btn alt" id="more" style="display:none" onclick="more()">Voir plus d'offres</button></p>
+</main>
+
+<section class="sec" id="publier"><div class="wrap">
+  <h2>Publier une offre, gratuitement</h2>
+  <p style="color:var(--muted);max-width:60ch">Ouvert à toutes les ONG, agences et entreprises de l'Est de la RDC. Aucun compte à créer.</p>
+  <div class="steps">
+    <div class="step"><b>1</b><p>Remplissez le formulaire : poste, organisation, lieu, date limite, comment postuler.</p></div>
+    <div class="step"><b>2</b><p>Notre équipe vérifie l'annonce (organisation réelle, aucune demande d'argent).</p></div>
+    <div class="step"><b>3</b><p>L'offre apparaît ici et peut être partagée sur WhatsApp et LinkedIn.</p></div>
+  </div>
+  <div class="row"><a id="formBtn" class="btn" target="_blank" rel="noopener" href="#publier">Publier mon offre →</a></div>
+  <div class="scam"><b>Attention aux arnaques.</b> Aucune ONG ne demande de paiement pour un recrutement, un test ou un dossier. Toute annonce qui exige de l'argent sera supprimée : signalez-la sur WhatsApp.</div>
+</div></section>
+
+<section class="sec" id="cv" style="padding-top:0"><div class="wrap"><div class="cv">
+  <div><h2>Générateur de CV, bientôt</h2><p>Créez un CV professionnel adapté aux recrutements ONG, prêt à envoyer en PDF, directement ici.</p></div>
+  <a class="btn sun" id="cvBtn" target="_blank" rel="noopener" href="#cv">Me prévenir au lancement</a>
+</div></div></section>
+
+<div id="detail" role="dialog" aria-modal="true" aria-label="Détail de l'offre"><div class="sheet" id="sheet"></div></div>
+
+<footer><div class="wrap">
+  <b style="color:#fff;font-family:'Bricolage Grotesque';font-size:1.2rem">KaziKivu</b>
+  <p style="margin-top:8px;max-width:60ch;font-size:.9rem">Plateforme gratuite d'offres d'emploi ONG et humanitaire de l'Est de la République démocratique du Congo. Les annonces sont publiées sous la responsabilité de leurs auteurs.</p>
+  <div class="sign">
+    <img src="assets/abel.jpeg" alt="Imara Kabiona Abel" onerror="this.outerHTML='<span class=&quot;ph&quot;>IK</span>'">
+    <div><div style="color:#fff;font-weight:700">Conçu par Imara Kabiona Abel</div>
+    <div style="font-size:.88rem">ETS LKB Company · Goma, RDC — <a href="https://www.linkedin.com/in/imara-kabiona-abel" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://lkb.dpdns.org/" target="_blank" rel="noopener">Site</a> · <a href="https://wa.me/243975140465" target="_blank" rel="noopener">WhatsApp</a></div></div>
+  </div>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script>
+(function(){
+/* >>> À REMPLIR (3 lignes) <<<
+   FORM_URL : lien de ton Google Form "Offres d'emploi"
+   CSV_URL  : lien CSV publié du Sheet lié à ce Form (Fichier > Partager > Publier sur le Web > CSV)
+   WA       : numéro WhatsApp pour signalements et alertes */
+var FORM_URL="COLLE_ICI_LE_LIEN_DU_FORM", CSV_URL="COLLE_ICI_LE_LIEN_CSV", WA="243975140465";
+/* >>> NE RIEN MODIFIER EN DESSOUS <<< */
+
+var PROV=["Nord-Kivu","Sud-Kivu","Ituri","Tanganyika","Maniema","Haut-Uélé","Kinshasa","Télétravail"];
+var jobs=[],shown=20,prov="",now=new Date();now.setHours(0,0,0,0);
+var $=function(i){return document.getElementById(i)};
+var ok=function(u){return /^https?:\/\//.test(u)&&u.indexOf('COLLE_ICI')<0};
+var norm=function(s){return(s||'').toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().toLowerCase()};
+function esc(s){var d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML}
+function pd(s){s=(s||'').trim();var m=s.match(/(\d{4})-(\d{1,2})-(\d{1,2})/);if(m)return new Date(+m[1],m[2]-1,+m[3]);
+ m=s.match(/(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})/);return m?new Date(+m[3],m[2]-1,+m[1]):null}
+function fmt(d){return d?d.toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'}):'—'}
+function hash(s){var h=5381;for(var i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return 'j'+(h>>>0).toString(36)}
+function color(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))%360;return 'hsl('+h+',55%,38%)'}
+
+var DEMO=[
+ {titre:"Logisticien (exemple)",org:"ONG Exemple",prov:"Nord-Kivu",ville:"Goma",secteur:"Logistique",contrat:"CDD",lim:"31/12/2030",desc:"Offre d'exemple pour tester l'affichage.\nMissions : achats, flotte, stocks.",post:"recrutement@exemple.org"},
+ {titre:"Chargé de protection (exemple)",org:"Association Exemple",prov:"Sud-Kivu",ville:"Bukavu",secteur:"Protection",contrat:"CDI",lim:"15/12/2030",desc:"Offre d'exemple.",post:"https://exemple.org/jobs"}];
+
+function cols(h){var u={},L=h.map(function(x){return{r:x,n:norm(x)}});
+ function f(t){for(var i=0;i<L.length;i++)if(!u[L[i].r]&&t(L[i].n)){u[L[i].r]=1;return L[i].r}return null}
+ function has(n,w){return w.some(function(k){return n.indexOf(k)>=0})}
+ return{st:f(function(n){return n.indexOf('statut')==0}),ts:f(function(n){return n.indexOf('horodat')==0||n=='timestamp'}),
+ lim:f(function(n){return has(n,['limite','cloture','expir'])}),titre:f(function(n){return has(n,['titre','poste','intitule'])}),
+ org:f(function(n){return has(n,['organisation','ong','employeur','structure'])}),prov:f(function(n){return n.indexOf('province')>=0}),
+ ville:f(function(n){return has(n,['ville','lieu'])}),secteur:f(function(n){return has(n,['secteur','domaine'])}),
+ contrat:f(function(n){return n.indexOf('contrat')>=0}),desc:f(function(n){return has(n,['descri','mission'])}),
+ post:f(function(n){return has(n,['postuler','candidature','lien'])})}}
+
+function build(o){var j={titre:o.titre||'Poste',org:o.org||'Organisation',prov:o.prov||'',ville:o.ville||'',secteur:o.secteur||'Autre',contrat:o.contrat||'',
+ lim:pd(o.lim),posted:pd(o.ts)||now,desc:o.desc||'',post:o.post||''};j.id=hash(j.titre+j.org+(o.lim||''));return j}
+
+function days(j){return j.lim?Math.round((j.lim-now)/864e5):null}
+function dl(j){var d=days(j);if(d===null)return{c:'',t:'Sans date limite',s:'',w:50};
+ if(d<0)return{c:'off',t:'Expirée',s:fmt(j.lim),w:0};
+ return{c:d<=3?'soon':'',t:d==0?"Dernier jour":d+' jour'+(d>1?'s':'')+' restants',s:fmt(j.lim),w:Math.max(6,Math.min(100,d*100/30))}}
+
+function filtered(){var q=norm($('q').value),fs=$('fs').value,fc=$('fc').value,ex=$('ex').checked;
+ var r=jobs.filter(function(j){var d=days(j);if(!ex&&d!==null&&d<0)return false;
+  if(prov&&j.prov!==prov)return false;if(fs&&j.secteur!==fs)return false;if(fc&&j.contrat!==fc)return false;
+  return !q||norm([j.titre,j.org,j.ville,j.prov,j.secteur,j.desc].join(' ')).indexOf(q)>=0});
+ return r.sort($('so').value=='dl'?function(a,b){return(a.lim||9e15)-(b.lim||9e15)}:function(a,b){return b.posted-a.posted})}
+
+function render(){var r=filtered();$('count').textContent=r.length+' offre'+(r.length>1?'s':'');
+ $('list').innerHTML=r.length?r.slice(0,shown).map(function(j){var d=dl(j);
+  return '<article class="job" tabindex="0" onclick="location.hash=\'offre='+j.id+'\'" onkeydown="if(event.key==\'Enter\')this.click()">'
+  +'<div class="mono-tile" style="background:'+color(j.org)+'">'+esc(j.org.trim().slice(0,2).toUpperCase())+'</div>'
+  +'<div><h3>'+esc(j.titre)+'</h3><div class="org">'+esc(j.org)+'</div><div class="meta">'
+  +(j.ville||j.prov?'<span class="pill">'+esc([j.ville,j.prov].filter(Boolean).join(' · '))+'</span>':'')
+  +'<span class="pill g">'+esc(j.secteur)+'</span>'+(j.contrat?'<span class="pill g">'+esc(j.contrat)+'</span>':'')+'</div></div>'
+  +'<div class="dl '+d.c+'"><b>'+d.t+'</b><small>'+d.s+'</small><div class="bar2"><span style="width:'+d.w+'%"></span></div></div></article>'}).join('')
+  :'<div class="empty">Aucune offre ne correspond. Essayez d\'élargir votre recherche.</div>';
+ $('more').style.display=r.length>shown?'inline-flex':'none'}
+
+window.go=function(){shown=20;render();$('offres').scrollIntoView()};
+window.more=function(){shown+=20;render()};
+function opts(sel,label,key){var v=[];jobs.forEach(function(j){if(j[key]&&v.indexOf(j[key])<0)v.push(j[key])});v.sort();
+ $(sel).innerHTML='<option value="">'+label+'</option>'+v.map(function(x){return'<option>'+esc(x)+'</option>'}).join('')}
+
+function applyBtn(p){if(!p)return'';var m=p.match(/[\w.+-]+@[\w-]+\.[\w.]+/);
+ if(/^https?:\/\//.test(p.trim()))return'<a class="btn" target="_blank" rel="noopener" href="'+esc(p.trim())+'">Postuler →</a>';
+ return m?'<a class="btn" href="mailto:'+m[0]+'">Postuler par email →</a>':'<p class="desc">Pour postuler : '+esc(p)+'</p>'}
+
+function detail(){var m=location.hash.match(/offre=(\w+)/),el=$('detail'),old=$('ld');if(old)old.remove();
+ if(!m){el.classList.remove('open');document.body.style.overflow='';return}
+ var j=jobs.filter(function(x){return x.id==m[1]})[0];if(!j){el.classList.remove('open');return}
+ var d=dl(j),u=location.href;
+ $('sheet').innerHTML='<button class="x" aria-label="Fermer" onclick="location.hash=\'offres\'">✕</button>'
+ +'<div class="mono-tile" style="background:'+color(j.org)+'">'+esc(j.org.trim().slice(0,2).toUpperCase())+'</div>'
+ +'<h2>'+esc(j.titre)+'</h2><div class="org">'+esc(j.org)+'</div><div class="meta">'
+ +'<span class="pill">'+esc([j.ville,j.prov].filter(Boolean).join(' · ')||'RDC')+'</span><span class="pill g">'+esc(j.secteur)+'</span>'
+ +(j.contrat?'<span class="pill g">'+esc(j.contrat)+'</span>':'')+'<span class="pill g">Limite : '+fmt(j.lim)+'</span></div>'
+ +'<div class="desc">'+esc(j.desc||'Détails communiqués par l\'employeur lors de la candidature.')+'</div>'+applyBtn(j.post)
+ +'<div class="scam"><b>Sécurité :</b> ne payez jamais pour postuler. Un doute ? Signalez cette annonce sur WhatsApp.</div>'
+ +'<div class="row"><a class="btn alt" target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent(j.titre+' — '+j.org+'\n'+u)+'">Partager WhatsApp</a>'
+ +'<a class="btn alt" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(u)+'">Partager LinkedIn</a>'
+ +'<a class="btn alt" target="_blank" rel="noopener" href="https://wa.me/'+WA+'?text='+encodeURIComponent('Signalement annonce : '+u)+'">Signaler</a></div>';
+ var ld={"@context":"https://schema.org","@type":"JobPosting",title:j.titre,description:j.desc||j.titre,datePosted:j.posted.toISOString().slice(0,10),
+  hiringOrganization:{"@type":"Organization",name:j.org},jobLocation:{"@type":"Place",address:{"@type":"PostalAddress",addressLocality:j.ville||j.prov||'',addressCountry:"CD"}}};
+ if(j.lim)ld.validThrough=j.lim.toISOString().slice(0,10);
+ var s=document.createElement('script');s.type='application/ld+json';s.id='ld';s.textContent=JSON.stringify(ld);document.head.appendChild(s);
+ el.classList.add('open');document.body.style.overflow='hidden';document.title=j.titre+' — '+j.org+' | KaziKivu'}
+
+function ready(list){jobs=list;opts('fs','Tous secteurs','secteur');opts('fc','Tous contrats','contrat');render();detail()}
+
+$('chips').innerHTML='<button class="chip on" data-p="">Toutes les provinces</button>'+PROV.map(function(p){return'<button class="chip" data-p="'+p+'">'+p+'</button>'}).join('');
+$('chips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;prov=b.dataset.p;
+ [].forEach.call(document.querySelectorAll('.chip'),function(c){c.classList.toggle('on',c===b)});shown=20;render()});
+['fs','fc','so','ex'].forEach(function(i){$(i).addEventListener('change',function(){shown=20;render()})});
+$('q').addEventListener('input',function(){shown=20;render()});
+$('q').addEventListener('keydown',function(e){if(e.key=='Enter')go()});
+document.addEventListener('keydown',function(e){if(e.key=='Escape'&&location.hash.indexOf('offre=')>=0)location.hash='offres'});
+$('detail').addEventListener('click',function(e){if(e.target.id=='detail')location.hash='offres'});
+window.addEventListener('hashchange',detail);
+
+if(ok(FORM_URL)){$('formBtn').href=FORM_URL}else{$('formBtn').style.display='none'}
+$('cvBtn').href='https://wa.me/'+WA+'?text='+encodeURIComponent('Bonjour, prévenez-moi au lancement du générateur de CV KaziKivu.');
+
+if(!ok(CSV_URL)||typeof Papa==='undefined'){
+ $('demo').innerHTML='<div class="demo"><b>Mode démonstration :</b> offres d\'exemple. Renseignez FORM_URL et CSV_URL dans le code pour afficher vos vraies annonces.</div>';
+ ready(DEMO.map(build));return}
+Papa.parse(CSV_URL,{download:true,header:true,skipEmptyLines:true,
+ complete:function(r){var c=cols(r.meta.fields||[]),g=function(row,k){return k?(row[k]||'').toString().trim():''};
+  ready(r.data.filter(function(row){return norm(g(row,c.st)).indexOf('valid')==0}).map(function(row){
+   return build({titre:g(row,c.titre),org:g(row,c.org),prov:g(row,c.prov),ville:g(row,c.ville),secteur:g(row,c.secteur),contrat:g(row,c.contrat),
+    lim:g(row,c.lim),desc:g(row,c.desc),post:g(row,c.post),ts:g(row,c.ts)})}))},
+ error:function(){$('list').innerHTML='<div class="empty">Impossible de charger les offres. Rechargez la page.</div>'}});
+})();
+</script>
+</body>
+</html>
